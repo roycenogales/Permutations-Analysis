@@ -2,13 +2,10 @@ import random
 import timeit
 
 def MinChange(X, Y = [], flag = 'R'):
-    #print(ret)
     A = X.copy() #creates a copy so that its not pass by reference
-    ret = Y.copy() #same reason
+    ret = Y.copy() #creates a copy of the list so that its not pass by reference
     if(flag == 'R'):
-       # print("inserting right")
         if(A == []):
-            print(ret)
             return
         
         ret.append(A.pop(0))
@@ -19,14 +16,12 @@ def MinChange(X, Y = [], flag = 'R'):
                     MinChange(A, ret, "R")
                 else:
                     MinChange(A, ret, "L")
-                #print(f"i = {i};swaping {ret[len(ret)-i-1]} and {ret[len(ret)-i-2]}")
                 x = ret[len(ret)-i-1]
                 ret[len(ret)-i-1] = ret[len(ret)-i-2]
                 ret[len(ret)-i-2] = x
-                #print(f'after swapR: {ret}')
-            #print("end of if loop R")
+                print(ret)
+                
             if(len(ret)%2 == 0):
-                #print(f"Calling Left, A == {A}")
                 MinChange(A, ret, "L")
             else:
                 MinChange(A, ret, "R")
@@ -34,10 +29,7 @@ def MinChange(X, Y = [], flag = 'R'):
             MinChange(A, ret, "R")
         
     else:
-        #print("inserting left ig")
-        #print(f"this is A after entering L: {A}")
         if(A == []):
-            print(ret)
             return
 
         ret.insert(0, A.pop(0)) #inserts to the front of the list
@@ -51,8 +43,7 @@ def MinChange(X, Y = [], flag = 'R'):
                 x = ret[i]
                 ret[i] = ret[i+1]
                 ret[i+1] = x
-                #print(f"after swapL {ret}")
-            #print("end of if loop L")
+                print(ret)
             if(len(ret)%2 == 0):
                 MinChange(A, ret, "L")
             else:
@@ -64,4 +55,4 @@ def MinChange(X, Y = [], flag = 'R'):
 if __name__ == '__main__':
     A = [1, 2, 3]
     MinChange(A)
-    print(f"this is A after function: {A}")
+    #print(f"this is A after function: {A}")
