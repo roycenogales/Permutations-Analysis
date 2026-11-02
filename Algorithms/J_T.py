@@ -1,6 +1,4 @@
-import random
 import timeit
-import time
 
 def J_T(A, D):
     #count = 1 #previously used to track if all permutations were created
@@ -48,7 +46,7 @@ def start(A):
 if __name__ == '__main__':
     A = [1, 2, 3]
     dirArr = directionList(A)
-    print(A)
-    print(dirArr)
+    #print(A)
+    #print(dirArr)
     J_T(A, dirArr)
-    
+    #print(timeit.timeit('J_T(A, dirArr)', number=10, globals=globals()))

@@ -1,4 +1,3 @@
-import time
 import timeit
 
 def LexOrder(A):
@@ -31,3 +30,4 @@ def reverse(A, i):
 if __name__ == '__main__':
     A = [1, 2, 3, 4]
     LexOrder(A)
+    #print(timeit.timeit('LexOrder(A)', number=10, globals=globals()))

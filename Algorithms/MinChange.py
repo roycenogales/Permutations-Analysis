@@ -56,5 +56,6 @@ def MinChange(X, Y = [], flag = 'R'):
 
 if __name__ == '__main__':
     A = [1, 2, 3]
-    MinChange(A)
+    
+    print(timeit.timeit('MinChange(A)', number=10, globals=globals()))
     #print(f"this is A after function: {A}")
