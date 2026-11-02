@@ -6,10 +6,11 @@ def MinChange(X, Y = [], flag = 'R'):
     ret = Y.copy() #creates a copy of the list so that its not pass by reference
     if(flag == 'R'):
         if(A == []):
+            print(ret)
             return
         
         ret.append(A.pop(0))
-        print(ret)
+        #print(ret)
         if(len(ret) > 1):
             for i in range(len(ret)-1):
                 if(i%2 == 0):
@@ -19,7 +20,7 @@ def MinChange(X, Y = [], flag = 'R'):
                 x = ret[len(ret)-i-1]
                 ret[len(ret)-i-1] = ret[len(ret)-i-2]
                 ret[len(ret)-i-2] = x
-                print(ret)
+                #print(ret)
                 
             if(len(ret)%2 == 0):
                 MinChange(A, ret, "L")
@@ -30,10 +31,11 @@ def MinChange(X, Y = [], flag = 'R'):
         
     else:
         if(A == []):
+            print(ret)
             return
 
         ret.insert(0, A.pop(0)) #inserts to the front of the list
-        print(ret)
+        #print(ret)
         if(len(ret) > 1): ##this might be unnecessary as we can only insert left after inserting right initially
             for i in range(len(ret)-1):
                 if(i%2 == 0):
@@ -43,7 +45,7 @@ def MinChange(X, Y = [], flag = 'R'):
                 x = ret[i]
                 ret[i] = ret[i+1]
                 ret[i+1] = x
-                print(ret)
+                #print(ret)
             if(len(ret)%2 == 0):
                 MinChange(A, ret, "L")
             else:

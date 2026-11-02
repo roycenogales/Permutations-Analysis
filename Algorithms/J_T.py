@@ -3,8 +3,8 @@ import timeit
 import time
 
 def J_T(A, D):
-    count = 1
-    print(A,D, count)
+    #count = 1 #previously used to track if all permutations were created
+    print(A) #, count)
     check = True
     while check == True:
         k = -1
@@ -22,8 +22,8 @@ def J_T(A, D):
         if(D[k] == "L"): swap(A, D, k, k-1)
         else: swap(A, D, k, k+1) 
         reverse(A, D, x)
-        count += 1
-        print(A,D, count)
+        #count += 1
+        print(A) #, count)
         
 def directionList(A):
     X = []
@@ -46,7 +46,7 @@ def start(A):
     J_T(A)
     
 if __name__ == '__main__':
-    A = [1, 2, 3, 4, 5]
+    A = [1, 2, 3]
     dirArr = directionList(A)
     print(A)
     print(dirArr)
