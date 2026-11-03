@@ -7,7 +7,7 @@ def LexOrder(A):
         found = False
         x = -1
         y = -1
-        print(A)
+        #print(A)
         for i in range(len(A)-1,0,-1):
             if(A[i-1] < A[i] and found == False):
                 x = i-1
@@ -28,6 +28,9 @@ def reverse(A, i):
         swap(A, j, len(A)-1-j+i)
         
 if __name__ == '__main__':
-    A = [1, 2, 3, 4]
-    LexOrder(A)
-    #print(timeit.timeit('LexOrder(A)', number=10, globals=globals()))
+
+    for i in range(1, 11, 1):
+        n = i
+        A = list(range(n))
+
+        print(f"n = {n}| time:", timeit.timeit('LexOrder(A)', number=10, globals=globals()))

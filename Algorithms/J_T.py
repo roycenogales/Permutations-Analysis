@@ -2,7 +2,7 @@ import timeit
 
 def J_T(A, D):
     #count = 1 #previously used to track if all permutations were created
-    print(A) #, count)
+    #print(A) #, count)
     check = True
     while check == True:
         k = -1
@@ -21,7 +21,7 @@ def J_T(A, D):
         else: swap(A, D, k, k+1) 
         reverse(A, D, x)
         #count += 1
-        print(A) #, count)
+        #print(A) #, count)
         
 def directionList(A):
     X = []
@@ -38,15 +38,11 @@ def reverse(A, D, x):
     for i in range(len(A)):
         if(A[i] > x and D[i] == "L"): D[i] = "R"
         elif(A[i] > x and D[i] == "R"): D[i] = "L"
-    
-def start(A):
-    A = createDict(A)
-    J_T(A)
-    
+
 if __name__ == '__main__':
-    A = [1, 2, 3]
-    dirArr = directionList(A)
-    #print(A)
-    #print(dirArr)
-    J_T(A, dirArr)
-    #print(timeit.timeit('J_T(A, dirArr)', number=10, globals=globals()))
+    
+    for i in range(1, 11, 1):
+        n = i
+        A = list(range(n))
+        dirArr = directionList(A)
+        print(f"n = {n}| time:", timeit.timeit('J_T(A, dirArr)', number=10, globals=globals()))
